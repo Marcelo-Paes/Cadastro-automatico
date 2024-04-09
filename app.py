@@ -27,7 +27,7 @@ senha.send_keys('passwordtesting')
 
 #4 - clicar em entrar
 botao_entrar = driver.find_element(By.XPATH,"//button[@id='Entrar']").click()
-sleep(10)
+sleep(7)
 
 
 #5 - Clicar em cada campo e preencher as informações extraida da planilha "empresas.xlsx"
@@ -54,9 +54,9 @@ for linha in pagina_empresas.iter_rows(min_row=2, values_only=True):
     sleep(1)
     driver.find_element(By.ID, 'dataFundacao').send_keys(data_fundacao)
     sleep(1)
-  
+    #6 - Clicar em cadastrar
+    cadastrar = driver.find_element(By.ID, 'Cadastrar').click()
+    sleep(3)
 
-#6 - Clicar em cadastrar
-cadastrar = driver.find_element(By.ID, 'Cadastrar').click()
-sleep(3)
+
 # O processo de repetição vai ser com base na quantiade de casdatros a serem realizados
