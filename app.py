@@ -35,7 +35,7 @@ empresas = openpyxl.load_workbook('./empresas.xlsx')
 pagina_empresas = empresas['dados empresas']
 
 #Pegando dados das colunas da planilha
-for linha in pagina_empresas.iter_rows(min_row=2, values_only=True, max_row=2):
+for linha in pagina_empresas.iter_rows(min_row=2, values_only=True):
     nome_empresa, email, telefone, endereco, cnpj, area_atuacao, quantidade_funcionario, data_fundacao = linha
 
     driver.find_element(By.ID, 'nomeEmpresa').send_keys(nome_empresa)
